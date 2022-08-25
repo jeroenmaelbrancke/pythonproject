@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent { 
+        docker { 
+            image 'python:latest'
+            args '-u root --entrypoint='
+        }
+    }
 
     stages {
         stage("Run unittest") {
